@@ -4,7 +4,8 @@ import RestaurantImage from "./_components/restaurant-image";
 import Image from "next/image";
 import { StarIcon } from "lucide-react";
 import DeliveryInfo from "@/app/components/delivery-info";
-import ProductList from "@/app/components/product-list";
+import ProductList from "@/app/components/product-listt";
+import CartBanner from "./_components/cart-banner";
 
 interface RestaurantPageProps {
   params: {
@@ -19,6 +20,9 @@ const RestaurantPage = async ({ params: { id } }: RestaurantPageProps) => {
     },
     include: {
       categories: {
+        orderBy: {
+          createdAt: "desc",
+        },
         include: {
           products: {
             where: {
@@ -105,6 +109,8 @@ const RestaurantPage = async ({ params: { id } }: RestaurantPageProps) => {
           <ProductList products={category.products} />
         </div>
       ))}
+
+      <CartBanner restaurant={restaurant} />
     </div>
   );
 };
