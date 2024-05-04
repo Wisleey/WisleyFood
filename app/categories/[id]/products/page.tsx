@@ -1,5 +1,5 @@
-import Header from "@/app/components/header";
-import ProductItem from "@/app/components/product-item";
+import Header from "@/app/_components/header";
+import ProductItem from "@/app/_components/product-item";
 import { db } from "@/app/_lib/prisma";
 import { notFound } from "next/navigation";
 
