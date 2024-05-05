@@ -2,8 +2,8 @@ import { getServerSession } from "next-auth";
 import { db } from "../_lib/prisma";
 import { authOptions } from "../_lib/auth";
 import { notFound } from "next/navigation";
-import Header from "../_components/header";
-import RestaurantItem from "../_components/restaurant-item";
+import Header from "../components/header";
+import RestaurantItem from "../components/restaurant-item";
 
 const MyFavoriteRestaurants = async () => {
   const session = await getServerSession(authOptions);
